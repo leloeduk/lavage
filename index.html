@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Station Lavage</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="brand"><i class="fas fa-car"></i> Station Lavage</div>
+    <button class="menu-toggle" aria-label="Menu" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="user-info">
+      <i class="fas fa-user-circle"></i>
+      <span class="username">Admin</span>
+    </div>
+  </header>
+
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <i class="fas fa-car"></i>
+      <span class="brand-name">Station Lavage</span>
+    </div>
+    <div class="sidebar-menu">
+      <a href="index.html" class="active"><i class="fas fa-chart-line"></i> <span>Dashboard</span></a>
+      <a href="ventes.html"><i class="fas fa-cash-register"></i> <span>Ventes</span></a>
+      <a href="employes.html"><i class="fas fa-users"></i> <span>Employés</span></a>
+      <a href="services.html"><i class="fas fa-tools"></i> <span>Services</span></a>
+      <a href="rapports.html"><i class="fas fa-file-alt"></i> <span>Rapports</span></a>
+    </div>
+    <div class="sidebar-footer">
+      <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Déconnexion</button>
+    </div>
+  </nav>
+
+  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+  <main class="content">
+    <h1>Dashboard</h1>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon bg-primary">
+          <i class="fas fa-money-bill-wave"></i>
+        </div>
+        <div class="card-content">
+          <p>Revenus du jour</p>
+          <h3>65 000 FCFA</h3>
+          <span class="card-trend up"><i class="fas fa-arrow-up"></i> 12%</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon bg-success">
+          <i class="fas fa-car-side"></i>
+        </div>
+        <div class="card-content">
+          <p>Véhicules lavés</p>
+          <h3>28</h3>
+          <span class="card-trend up"><i class="fas fa-arrow-up"></i> 5%</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon bg-warning">
+          <i class="fas fa-user-check"></i>
+        </div>
+        <div class="card-content">
+          <p>Employés actifs</p>
+          <h3>6</h3>
+          <span class="card-trend down"><i class="fas fa-arrow-down"></i> 2%</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon bg-danger">
+          <i class="fas fa-clock"></i>
+        </div>
+        <div class="card-content">
+          <p>Commandes en attente</p>
+          <h3>3</h3>
+          <span class="card-trend up"><i class="fas fa-arrow-up"></i> 8%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <h2>Historique des activités</h2>
+      <div class="section-actions">
+        <button class="btn btn-primary"><i class="fas fa-download"></i> Exporter</button>
+        <button class="btn btn-secondary"><i class="fas fa-filter"></i> Filtrer</button>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Client</th>
+            <th>Service</th>
+            <th>Montant</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>08/06/2025</td>
+            <td>M. Traoré</td>
+            <td>Lavage extérieur</td>
+            <td>2 000 FCFA</td>
+            <td><span class="badge badge-success">Complété</span></td>
+          </tr>
+          <tr>
+            <td>08/06/2025</td>
+            <td>Mme Diouf</td>
+            <td>Formule complète</td>
+            <td>5 000 FCFA</td>
+            <td><span class="badge badge-success">Complété</span></td>
+          </tr>
+          <tr>
+            <td>08/06/2025</td>
+            <td>M. Kouassi</td>
+            <td>Nettoyage intérieur</td>
+            <td>3 000 FCFA</td>
+            <td><span class="badge badge-warning">En cours</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <span>&copy; 2025 Station Lavage Pro - Tous droits réservés</span>
+      <div class="footer-links">
+        <a href="#"><i class="fas fa-question-circle"></i> Aide</a>
+        <a href="#"><i class="fas fa-shield-alt"></i> Confidentialité</a>
+        <a href="#"><i class="fas fa-file-alt"></i> Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+      document.body.classList.toggle('no-scroll');
+    }
+
+    // Fermer le menu quand on clique sur un lien
+    document.querySelectorAll('.sidebar-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+      });
+    });
+  </script>
+</body>
+</html>

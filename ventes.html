@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Station Lavage</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="navbar">
+    <strong><i class="fas fa-car"></i> Station Lavage</strong>
+    <span><i class="fas fa-user-circle"></i> Admin</span>
+  </div>
+
+  <div class="sidebar">
+    <a href="index.html" class="active"><i class="fas fa-chart-line"></i> Dashboard</a>
+    <a href="ventes.html"><i class="fas fa-cash-register"></i> Ventes</a>
+    <a href="employes.html"><i class="fas fa-users"></i> Employés</a>
+    <a href="services.html"><i class="fas fa-tools"></i> Services</a>
+    <a href="rapports.html"><i class="fas fa-file-alt"></i> Rapports</a>
+  </div>
+
+  <div class="content">
+    <h1>Dashboard</h1>
+    <div class="grid">
+      <div class="card">
+        <p><i class="fas fa-money-bill-wave"></i> Revenus du jour</p>
+        <h3 id="revenus">0 FCFA</h3>
+      </div>
+      <div class="card">
+        <p><i class="fas fa-car-side"></i> Véhicules lavés</p>
+        <h3 id="vehicules">0</h3>
+      </div>
+      <div class="card">
+        <p><i class="fas fa-user-check"></i> Employés actifs</p>
+        <h3 id="employes">0</h3>
+      </div>
+      <div class="card">
+        <p><i class="fas fa-clock"></i> Commandes en attente</p>
+        <h3 id="commandes">0</h3>
+      </div>
+    </div>
+
+    <h2 style="margin-top:2rem;">Historique des activités</h2>
+    <table id="historique">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Client</th>
+          <th>Service</th>
+          <th>Montant</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Contenu injecté par JavaScript -->
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Station Lavage Pro - Tous droits réservés
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
