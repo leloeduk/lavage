@@ -1,30 +1,76 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Employés</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+   <link rel="stylesheet" href="style.css">
+  <title>Employés - Station Lavage Pro</title>
+  <!-- Même en-tête CSS -->
 </head>
 <body>
-  <div class="navbar"><strong>Station Lavage</strong><span>Admin</span></div>
-  <div class="sidebar">
-    <a href="index.html">Dashboard</a>
-    <a href="ventes.html">Ventes</a>
-    <a href="employes.html" class="active">Employés</a>
-    <a href="services.html">Services</a>
-    <a href="rapports.html">Rapports</a>
-  </div>
-  <div class="content">
-    <h1>Employés</h1>
-    <button class="btn">Ajouter Employé</button>
-    <table>
-      <thead><tr><th>Nom</th><th>Commission</th><th>Ventes aujourd'hui</th></tr></thead>
-      <tbody>
-        <tr><td>Ali</td><td>10%</td><td>5</td></tr>
-        <tr><td>Fatou</td><td>12%</td><td>4</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="footer">&copy; 2025 Station Lavage Pro</div>
+  <!-- Même navbar et sidebar -->
+  <main class="content">
+    <h1><i class="fas fa-users"></i> Gestion des Employés</h1>
+    
+    <div class="employee-status">
+      <div class="status active">
+        <h3>6</h3>
+        <p>Employés actifs</p>
+      </div>
+      <div class="status inactive">
+        <h3>2</h3>
+        <p>Employés inactifs</p>
+      </div>
+      <div class="status vacation">
+        <h3>1</h3>
+        <p>En congé</p>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <button class="btn btn-primary"><i class="fas fa-plus"></i> Nouvel Employé</button>
+      <div class="employee-actions">
+        <button class="btn btn-secondary"><i class="fas fa-calendar-alt"></i> Planning</button>
+        <button class="btn btn-secondary"><i class="fas fa-chart-pie"></i> Performances</button>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Photo</th>
+            <th>Nom Complet</th>
+            <th>Poste</th>
+            <th>Disponibilité</th>
+            <th>Salaire</th>
+            <th>Performance</th>
+            <th>Statut</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#EMP-003</td>
+            <td><div class="employee-photo"><img src="avatar3.jpg" alt=""></div></td>
+            <td>Abdoul Karim</td>
+            <td>Laveur principal</td>
+            <td>8h-17h</td>
+            <td>150 000 FCFA</td>
+            <td>
+              <div class="performance-bar" style="--rating: 85%"></div>
+              <span>85%</span>
+            </td>
+            <td><span class="badge badge-success">Actif</span></td>
+            <td>
+              <button class="btn-icon"><i class="fas fa-edit"></i></button>
+              <button class="btn-icon"><i class="fas fa-user-cog"></i></button>
+            </td>
+          </tr>
+          <!-- Plus d'employés... -->
+        </tbody>
+      </table>
+    </div>
+  </main>
 </body>
 </html>

@@ -1,29 +1,70 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Rapports</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+   <link rel="stylesheet" href="style.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <title>Rapports - Station Lavage Pro</title>
+  <!-- Même en-tête CSS -->
 </head>
 <body>
-  <div class="navbar"><strong>Station Lavage</strong><span>Admin</span></div>
-  <div class="sidebar">
-    <a href="index.html">Dashboard</a>
-    <a href="ventes.html">Ventes</a>
-    <a href="employes.html">Employés</a>
-    <a href="services.html">Services</a>
-    <a href="rapports.html" class="active">Rapports</a>
-  </div>
-  <div class="content">
-    <h1>Rapports</h1>
-    <button class="btn">Générer PDF</button>
-    <table>
-      <thead><tr><th>Date</th><th>Total Ventes</th><th>Commissions</th><th>Net</th></tr></thead>
-      <tbody>
-        <tr><td>2025-06-08</td><td>65 000 FCFA</td><td>8 000 FCFA</td><td>57 000 FCFA</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="footer">&copy; 2025 Station Lavage Pro</div>
+  <!-- Même navbar et sidebar -->
+  <main class="content">
+    <h1><i class="fas fa-file-alt"></i> Rapports et Statistiques</h1>
+    
+    <div class="report-period">
+      <div class="period-selector">
+        <button class="btn btn-secondary active">Aujourd'hui</button>
+        <button class="btn btn-secondary">Cette Semaine</button>
+        <button class="btn btn-secondary">Ce Mois</button>
+        <button class="btn btn-secondary">Personnalisé</button>
+      </div>
+      <div class="date-range">
+        <input type="date"> au <input type="date">
+        <button class="btn btn-primary">Générer</button>
+      </div>
+    </div>
+
+    <div class="report-cards">
+      <div class="report-card">
+        <h3>Revenus Totaux</h3>
+        <div class="amount">425 000 FCFA</div>
+        <div class="chart-placeholder"></div>
+      </div>
+      
+      <div class="report-card">
+        <h3>Services Populaires</h3>
+        <div class="top-services">
+          <div class="service-item">
+            <span>1. Lavage Complet</span>
+            <span>142 ventes</span>
+          </div>
+          <!-- Plus de services... -->
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <h2>Rapports Détailés</h2>
+      <div class="report-actions">
+        <button class="btn btn-primary"><i class="fas fa-file-pdf"></i> Exporter PDF</button>
+        <button class="btn btn-secondary"><i class="fas fa-envelope"></i> Envoyer par Email</button>
+      </div>
+    </div>
+
+    <div class="report-tabs">
+      <button class="tab-btn active">Ventes</button>
+      <button class="tab-btn">Clients</button>
+      <button class="tab-btn">Employés</button>
+      <button class="tab-btn">Stocks</button>
+    </div>
+
+    <div class="report-content">
+      <!-- Contenu des rapports -->
+    </div>
+  </main>
 </body>
 </html>

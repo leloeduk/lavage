@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - Station Lavage</title>
-  <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="style.css">
+  <title>Dashboard - Station Lavage Pro</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
   <header class="navbar">
-    <div class="brand"><i class="fas fa-car"></i> Station Lavage</div>
+    <div class="brand"><i class="fas fa-car"></i> Station Lavage Pro</div>
     <button class="menu-toggle" aria-label="Menu" onclick="toggleMenu()">
       <i class="fas fa-bars"></i>
     </button>
@@ -22,14 +23,17 @@
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <i class="fas fa-car"></i>
-      <span class="brand-name">Station Lavage</span>
+      <span class="brand-name">Station Lavage Pro</span>
     </div>
     <div class="sidebar-menu">
       <a href="index.html" class="active"><i class="fas fa-chart-line"></i> <span>Dashboard</span></a>
       <a href="ventes.html"><i class="fas fa-cash-register"></i> <span>Ventes</span></a>
+      <a href="clients.html"><i class="fas fa-user-tie"></i> <span>Clients</span></a>
       <a href="employes.html"><i class="fas fa-users"></i> <span>Employés</span></a>
       <a href="services.html"><i class="fas fa-tools"></i> <span>Services</span></a>
+      <a href="vehicules.html"><i class="fas fa-car-side"></i> <span>Véhicules</span></a>
       <a href="rapports.html"><i class="fas fa-file-alt"></i> <span>Rapports</span></a>
+      <a href="parametres.html"><i class="fas fa-cog"></i> <span>Paramètres</span></a>
     </div>
     <div class="sidebar-footer">
       <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Déconnexion</button>
@@ -39,7 +43,7 @@
   <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
   <main class="content">
-    <h1>Dashboard</h1>
+    <h1>Tableau de Bord</h1>
     <div class="grid">
       <div class="card">
         <div class="card-icon bg-primary">
@@ -84,47 +88,81 @@
     </div>
 
     <div class="section-header">
-      <h2>Historique des activités</h2>
+      <h2>Activités Récentes</h2>
       <div class="section-actions">
-        <button class="btn btn-primary"><i class="fas fa-download"></i> Exporter</button>
         <button class="btn btn-secondary"><i class="fas fa-filter"></i> Filtrer</button>
+        <button class="btn btn-primary"><i class="fas fa-download"></i> Exporter</button>
       </div>
     </div>
     <div class="table-responsive">
       <table>
         <thead>
           <tr>
-            <th>Date</th>
+            <th>Date/Heure</th>
             <th>Client</th>
             <th>Service</th>
+            <th>Véhicule</th>
             <th>Montant</th>
             <th>Statut</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>08/06/2025</td>
+            <td>08/06/2025 09:30</td>
             <td>M. Traoré</td>
             <td>Lavage extérieur</td>
+            <td>Toyota RAV4</td>
             <td>2 000 FCFA</td>
             <td><span class="badge badge-success">Complété</span></td>
           </tr>
           <tr>
-            <td>08/06/2025</td>
+            <td>08/06/2025 10:15</td>
             <td>Mme Diouf</td>
             <td>Formule complète</td>
+            <td>Mercedes Classe A</td>
             <td>5 000 FCFA</td>
             <td><span class="badge badge-success">Complété</span></td>
           </tr>
           <tr>
-            <td>08/06/2025</td>
+            <td>08/06/2025 11:45</td>
             <td>M. Kouassi</td>
             <td>Nettoyage intérieur</td>
+            <td>Peugeot 3008</td>
             <td>3 000 FCFA</td>
+            <td><span class="badge badge-warning">En cours</span></td>
+          </tr>
+          <tr>
+            <td>08/06/2025 13:20</td>
+            <td>M. Diallo</td>
+            <td>Lavage rapide</td>
+            <td>Renault Duster</td>
+            <td>1 500 FCFA</td>
+            <td><span class="badge badge-success">Complété</span></td>
+          </tr>
+          <tr>
+            <td>08/06/2025 14:30</td>
+            <td>M. Konaté</td>
+            <td>Cire spéciale</td>
+            <td>Range Rover</td>
+            <td>7 500 FCFA</td>
             <td><span class="badge badge-warning">En cours</span></td>
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="section-header">
+      <h2>Statistiques Mensuelles</h2>
+      <div class="section-actions">
+        <select class="btn btn-secondary">
+          <option>Juillet 2025</option>
+          <option>Juin 2025</option>
+          <option>Mai 2025</option>
+        </select>
+      </div>
+    </div>
+    <div class="card" style="padding: 1.5rem; height: 300px; display: flex; align-items: center; justify-content: center; background: white; border-radius: var(--radius); box-shadow: var(--shadow);">
+      <p style="color: var(--gray);">Graphique des statistiques mensuelles (à implémenter)</p>
     </div>
   </main>
 
@@ -158,6 +196,27 @@
         document.body.classList.remove('no-scroll');
       });
     });
+
+    // Simulation de données pour les autres pages
+    function generatePages() {
+      const pages = [
+        { name: 'ventes.html', title: 'Gestion des Ventes', icon: 'cash-register' },
+        { name: 'clients.html', title: 'Gestion des Clients', icon: 'user-tie' },
+        { name: 'employes.html', title: 'Gestion des Employés', icon: 'users' },
+        { name: 'services.html', title: 'Gestion des Services', icon: 'tools' },
+        { name: 'vehicules.html', title: 'Gestion des Véhicules', icon: 'car-side' },
+        { name: 'rapports.html', title: 'Rapports et Statistiques', icon: 'file-alt' },
+        { name: 'parametres.html', title: 'Paramètres du Système', icon: 'cog' }
+      ];
+
+      pages.forEach(page => {
+        // Ici vous pourriez générer dynamiquement le contenu de chaque page
+        console.log(`Page générée: ${page.name} - ${page.title}`);
+      });
+    }
+
+    // Appeler la fonction au chargement si nécessaire
+    // window.addEventListener('DOMContentLoaded', generatePages);
   </script>
 </body>
 </html>

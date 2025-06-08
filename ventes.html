@@ -1,67 +1,88 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - Station Lavage</title>
-  <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Dashboard - Station Lavage Pro</title>
+
+  <title>Ventes - Station Lavage Pro</title>
+  <!-- Même en-tête CSS que la page principale -->
 </head>
 <body>
-  <div class="navbar">
-    <strong><i class="fas fa-car"></i> Station Lavage</strong>
-    <span><i class="fas fa-user-circle"></i> Admin</span>
-  </div>
-
-  <div class="sidebar">
-    <a href="index.html" class="active"><i class="fas fa-chart-line"></i> Dashboard</a>
-    <a href="ventes.html"><i class="fas fa-cash-register"></i> Ventes</a>
-    <a href="employes.html"><i class="fas fa-users"></i> Employés</a>
-    <a href="services.html"><i class="fas fa-tools"></i> Services</a>
-    <a href="rapports.html"><i class="fas fa-file-alt"></i> Rapports</a>
-  </div>
-
-  <div class="content">
-    <h1>Dashboard</h1>
-    <div class="grid">
-      <div class="card">
-        <p><i class="fas fa-money-bill-wave"></i> Revenus du jour</p>
-        <h3 id="revenus">0 FCFA</h3>
+  <!-- Même navbar et sidebar que la page principale -->
+  <main class="content">
+    <h1><i class="fas fa-cash-register"></i> Gestion des Ventes</h1>
+    
+    <div class="section-header">
+      <div class="search-filter">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Rechercher une vente...">
+        </div>
+        <button class="btn btn-primary" onclick="openNewSaleModal()">
+          <i class="fas fa-plus"></i> Nouvelle Vente
+        </button>
       </div>
-      <div class="card">
-        <p><i class="fas fa-car-side"></i> Véhicules lavés</p>
-        <h3 id="vehicules">0</h3>
-      </div>
-      <div class="card">
-        <p><i class="fas fa-user-check"></i> Employés actifs</p>
-        <h3 id="employes">0</h3>
-      </div>
-      <div class="card">
-        <p><i class="fas fa-clock"></i> Commandes en attente</p>
-        <h3 id="commandes">0</h3>
+      <div class="section-actions">
+        <button class="btn btn-secondary"><i class="fas fa-calendar-alt"></i> Période</button>
+        <button class="btn btn-secondary"><i class="fas fa-download"></i> Exporter</button>
       </div>
     </div>
 
-    <h2 style="margin-top:2rem;">Historique des activités</h2>
-    <table id="historique">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Client</th>
-          <th>Service</th>
-          <th>Montant</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Contenu injecté par JavaScript -->
-      </tbody>
-    </table>
-  </div>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>N° Ticket</th>
+            <th>Date/Heure</th>
+            <th>Client</th>
+            <th>Services</th>
+            <th>Véhicule</th>
+            <th>Montant</th>
+            <th>Employé</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#1254</td>
+            <td>08/06/2025 09:30</td>
+            <td>M. Traoré (Régulier)</td>
+            <td>Lavage Extérieur + Cire</td>
+            <td>Toyota RAV4</td>
+            <td>4 500 FCFA</td>
+            <td>Abdoul K.</td>
+            <td>
+              <button class="btn-icon"><i class="fas fa-print"></i></button>
+              <button class="btn-icon"><i class="fas fa-receipt"></i></button>
+            </td>
+          </tr>
+          <!-- Plus de lignes de vente... -->
+        </tbody>
+      </table>
+    </div>
 
-  <div class="footer">
-    &copy; 2025 Station Lavage Pro - Tous droits réservés
-  </div>
+    <div class="pagination">
+      <button class="btn btn-secondary"><i class="fas fa-chevron-left"></i></button>
+      <span class="page-active">1</span>
+      <button class="btn btn-secondary">2</button>
+      <button class="btn btn-secondary">3</button>
+      <button class="btn btn-secondary"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </main>
 
-  <script src="script.js"></script>
+  <!-- Modal Nouvelle Vente (caché par défaut) -->
+  <div class="modal" id="newSaleModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Nouvelle Vente</h3>
+        <button class="btn-icon" onclick="closeModal()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <!-- Formulaire de vente -->
+      </div>
+    </div>
+  </div>
 </body>
 </html>
